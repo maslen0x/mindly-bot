@@ -1,0 +1,205 @@
+@import 'normalize'
+@import 'reset'
+@import 'global'
+@import 'fonts'
+@import 'libs'
+
+.header
+  position: relative
+  padding-top: 7vh
+  margin-bottom: 20vh
+  @media screen and ( max-width: 768px )
+    padding-top: 4vh
+    margin-bottom: 3vh
+  &__logo
+    @include anim(fadeInDown, fadeOutUp, 0s, 1.25s)
+    @media screen and ( max-width: 1200px )
+      max-width: 380px
+    @media screen and ( max-width: 768px )
+      margin: 0 auto
+    @media screen and ( max-width: 576px )
+      max-width: 280px
+
+.content
+  position: relative
+  z-index: 50
+  @media screen and ( max-width: 1024px )
+    max-width: 500px
+  @media screen and ( max-width: 768px )
+    max-width: 100%
+    text-align: center
+  &__title
+    max-width: 700px
+    font-size: 53px
+    line-height: 1.2
+    margin-bottom: 6vh
+    @include anim(fadeInLeft, fadeOutLeft, .75s, .5s)
+    @media screen and ( max-width: 1200px )
+      font-size: 43px
+      max-width: 600px
+      margin-bottom: 4vh
+    @media screen and ( max-width: 1024px )
+      font-size: 33px
+      margin-bottom: 2vh
+    @media screen and ( max-width: 768px )
+      max-width: 480px
+      margin: 0 auto 60vh
+    @media screen and ( max-width: 576px )
+      max-width: 280px
+      font-size: 21px
+  &__subtitle
+    max-width: 500px
+    margin-bottom: 8vh
+    @include anim(fadeInLeft, fadeOutLeft, 1s, .25s)
+    @media screen and ( max-width: 1200px )
+      font-size: 18px
+      margin-bottom: 6vh
+    @media screen and ( max-width: 1024px )
+      font-size: 16px
+      margin-bottom: 4vh
+    @media screen and ( max-width: 768px )
+      max-width: 330px
+      margin: 0 auto 25px
+    @media screen and ( max-width: 576px )
+      font-size: 13px
+  &__btn
+    display: inline-flex
+    align-items: center
+    width: 57px
+    height: 57px
+    font-weight: 600
+    border: 3px solid $accent
+    border-radius: 28px
+    transition: width .2s, background-color .2s, color .2s
+    @include anim(fadeInLeft, fadeOutLeft, 1.25s, .25s)
+    @media screen and ( max-width: 768px )
+      width: 130px
+      height: 40px
+      font-size: 16px
+      border: 0
+    &:hover
+      width: 175px
+      @media screen and ( max-width: 768px )
+        width: 130px
+      .content__btn-text
+        width: 100%
+    &:active:not(:disabled)
+      color: #fff
+      background-color: $accent
+      svg
+        fill: #fff
+      .content__btn-text
+        color: #fff
+    &:disabled
+      cursor: default
+    &-icon
+      display: flex
+      align-items: center
+      position: relative
+      left: 15px
+      flex-shrink: 0
+      @media screen and ( max-width: 768px )
+        left: 0
+        width: 40px
+        height: 40px
+        border: 2px solid $accent
+        border-radius: 50%
+      svg
+        position: relative
+        fill: $accent
+        transition: fill .2s
+      .play-icon
+        left: 3px
+        width: 22px
+        height: 25px
+        @media screen and ( max-width: 768px )
+          left: 11px
+          width: 16px
+          height: 19px
+      .stop-icon
+        display: none
+        width: 22px
+        height: 21px
+        @media screen and ( max-width: 768px )
+          left: 10px
+          width: 16px
+          height: 17px
+    &-text
+      display: block
+      width: 0
+      color: $accent
+      overflow: hidden
+      padding-bottom: 3px
+      transition: width .2s, color .2s
+      @media screen and ( max-width: 768px )
+        width: 100%
+    &.active
+      @media screen and ( max-width: 768px )
+          width: 100px
+      &:hover
+        width: 140px
+        @media screen and ( max-width: 768px )
+          width: 100px
+      .play-icon
+        display: none
+      .stop-icon
+        display: block
+
+.illustration
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100vw
+  @media screen and ( max-width: 768px )
+    top: 0
+  &__container
+    position: relative
+    @media screen and ( max-width: 576px )
+      height: 100%
+
+.wave
+  position: absolute
+  width: 100%
+  &--top
+    bottom: 0
+    z-index: 1
+    @include anim(fadeInUp, fadeOutDown, .25s, .75s)
+    @media screen and ( max-width: 768px )
+      bottom: 150px
+    @media screen and ( max-width: 576px )
+      bottom: 25vh
+  &--center
+    display: none
+    bottom: 0
+    z-index: 3
+    @include anim(fadeInUp, fadeOutDown, .5s, 1s)
+    @media screen and ( max-width: 768px )
+      display: block
+      bottom: 50px
+    @media screen and ( max-width: 576px )
+      bottom: 10vh
+  &--bottom
+    bottom: 0
+    z-index: 4
+    @include anim(fadeInUp, fadeOutDown, .5s, 1s)
+    @media screen and ( max-width: 768px )
+      bottom: -180px
+    @media screen and ( max-width: 576px )
+      bottom: -3vh
+
+.phone
+  position: absolute
+  right: -50px
+  bottom: -230px
+  z-index: 2
+  @include anim(fadeInDown, fadeOutDown, .75s, 0s)
+  @media screen and ( max-width: 1200px )
+    right: 20px
+  @media screen and ( max-width: 768px )
+    top: 250px
+    right: 50px
+  @media screen and ( max-width: 576px )
+    position: relative
+    right: 0
+    max-width: 280px
+    margin: 0 auto
