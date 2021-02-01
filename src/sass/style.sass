@@ -21,14 +21,14 @@
       max-width: 280px
 
 .content
-  position: relative
-  z-index: 50
   @media screen and ( max-width: 1024px )
     max-width: 500px
   @media screen and ( max-width: 768px )
     max-width: 100%
     text-align: center
   &__title
+    position: relative
+    z-index: 10
     max-width: 700px
     font-size: 53px
     line-height: 1.2
@@ -44,10 +44,13 @@
     @media screen and ( max-width: 768px )
       max-width: 480px
       margin: 0 auto 60vh
+      @include anim(fadeInDown, fadeOutUp, .25s, .25s)
     @media screen and ( max-width: 576px )
       max-width: 280px
       font-size: 21px
   &__subtitle
+    position: relative
+    z-index: 10
     max-width: 500px
     margin-bottom: 8vh
     @include anim(fadeInLeft, fadeOutLeft, 1s, .25s)
@@ -60,9 +63,12 @@
     @media screen and ( max-width: 768px )
       max-width: 330px
       margin: 0 auto 25px
+      @include anim(fadeInUp, fadeOutDown, .75s, .25s)
     @media screen and ( max-width: 576px )
       font-size: 13px
   &__btn
+    position: relative
+    z-index: 10
     display: inline-flex
     align-items: center
     width: 57px
@@ -77,6 +83,7 @@
       height: 40px
       font-size: 16px
       border: 0
+      @include anim(fadeInUp, fadeOutDown, 1s, .25s)
     &:hover
       width: 175px
       @media screen and ( max-width: 768px )
@@ -166,6 +173,7 @@
     @include anim(fadeInUp, fadeOutDown, .25s, .75s)
     @media screen and ( max-width: 768px )
       bottom: 150px
+      @include anim(fadeInUp, fadeOutDown, .5s, .5s)
     @media screen and ( max-width: 576px )
       bottom: 25vh
   &--center
@@ -175,7 +183,8 @@
     @include anim(fadeInUp, fadeOutDown, .5s, 1s)
     @media screen and ( max-width: 768px )
       display: block
-      bottom: 50px
+      bottom: 0
+      @include anim(fadeInUp, fadeOutDown, .5s, .75s)
     @media screen and ( max-width: 576px )
       bottom: 10vh
   &--bottom
@@ -185,13 +194,14 @@
     @media screen and ( max-width: 768px )
       bottom: -180px
     @media screen and ( max-width: 576px )
-      bottom: -3vh
+      bottom: -5vh
 
 .phone
+  display: block
   position: absolute
   right: -50px
   bottom: -230px
-  z-index: 2
+  z-index: 3
   @include anim(fadeInDown, fadeOutDown, .75s, 0s)
   @media screen and ( max-width: 1200px )
     right: 20px
@@ -203,3 +213,22 @@
     right: 0
     max-width: 280px
     margin: 0 auto
+
+.lines
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 2
+  width: 100vw
+  height: 100vh
+  @media screen and ( max-width: 768px )
+    display: none
+  &--mobile
+    display: none
+    @media screen and ( max-width: 768px )
+      display: block
+
+[data-parallax]
+  transition: transform .2s

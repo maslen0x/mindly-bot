@@ -13,7 +13,8 @@ const vars = {
   ],
   header: document.querySelector('.header'),
   contentTitle: document.querySelector('.content__title'),
-  phone: document.querySelector('.phone')
+  phone: document.querySelector('.phone'),
+  parallaxElems: document.querySelectorAll('[data-parallax]')
 }
 
 export default vars;
