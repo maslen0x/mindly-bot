@@ -140,6 +140,7 @@
       transition: width .2s, color .2s
       @media screen and ( max-width: 768px )
         width: 100%
+        padding-bottom: 0
     &.active
       @media screen and ( max-width: 768px )
           width: 100px
@@ -163,6 +164,12 @@
     position: relative
     @media screen and ( max-width: 576px )
       height: 100%
+  &__bottom
+    position: absolute
+    bottom: 0
+    z-index: 4
+    @media screen and ( max-width: 768px )
+      display: none
 
 .wave
   position: absolute
@@ -176,17 +183,17 @@
       @include anim(fadeInUp, fadeOutDown, .5s, .5s)
     @media screen and ( max-width: 576px )
       bottom: 25vh
+  // &--center
+  //   bottom: 0
+  //   z-index: 3
+  //   @include anim(fadeInUp, fadeOutDown, .5s, 1s)
+  //   @media screen and ( min-width: 769px )
+  //     display: none
+  //     @include anim(fadeInUp, fadeOutDown, .5s, .75s)
+  //   @media screen and ( max-width: 576px )
+  //     bottom: 10vh
   &--center
-    display: none
-    bottom: 0
-    z-index: 3
-    @include anim(fadeInUp, fadeOutDown, .5s, 1s)
-    @media screen and ( max-width: 768px )
-      display: block
-      bottom: 0
-      @include anim(fadeInUp, fadeOutDown, .5s, .75s)
-    @media screen and ( max-width: 576px )
-      bottom: 10vh
+    opacity: 0
   &--bottom
     bottom: 0
     z-index: 4
@@ -195,14 +202,22 @@
       bottom: -180px
     @media screen and ( max-width: 576px )
       bottom: -5vh
+  &--mobile
+    @media screen and ( min-width: 769px )
+      display: none
 
 .phone
   display: block
-  position: absolute
-  right: -50px
-  bottom: -230px
+  // position: absolute
+  // right: -50px
+  // bottom: -230px
   z-index: 3
   @include anim(fadeInDown, fadeOutDown, .75s, 0s)
+  // opacity: 0
+  // animation: fadeInDown 1s ease .75s 1 forwards
+  // &.reverse
+  //   opacity: 1
+  //   animation: fadeOutDown 1s ease 0s 1 forwards
   @media screen and ( max-width: 1200px )
     right: 20px
   @media screen and ( max-width: 768px )
@@ -213,6 +228,8 @@
     right: 0
     max-width: 280px
     margin: 0 auto
+  &__btn
+    cursor: pointer
 
 .lines
   position: fixed
@@ -232,3 +249,8 @@
 
 [data-parallax]
   transition: transform .2s
+
+.center-wave
+  position: absolute
+  bottom: 0
+  width: 100vw

@@ -8,13 +8,14 @@ const vars = {
     document.querySelector('.content__subtitle'),
     document.querySelector('.phone'),
     document.querySelector('.wave--top'),
-    document.querySelector('.wave--center'),
-    document.querySelector('.wave--bottom'),
+    // document.querySelector('.wave--center'),
+    document.querySelectorAll('.wave--bottom')
   ],
   header: document.querySelector('.header'),
   contentTitle: document.querySelector('.content__title'),
   phone: document.querySelector('.phone'),
-  parallaxElems: document.querySelectorAll('[data-parallax]')
+  parallaxElems: document.querySelectorAll('[data-parallax]'),
+  liquidBtns: document.querySelectorAll('[data-liquid]')
 }
 
 export default vars;

@@ -1,30 +1,25 @@
 import vars from './_vars';
 import toggleContentBtn from './functions/toggleContentBtn';
 import changePhonePosition from './functions/changePhonePosition';
+import parallax from './functions/parallax';
 
 document.addEventListener('DOMContentLoaded', () => {
-  changePhonePosition();
+  // changePhonePosition();
 })
 
 window.addEventListener('resize', () => {
-  changePhonePosition();
+  // changePhonePosition();
+})
+
+window.addEventListener('mousemove', e => {
+  parallax(e);
 })
 
 vars.contentBtn.addEventListener('click', () => {
   toggleContentBtn();
-  vars.toggleElems.forEach(el => el.classList.toggle('reverse'));
-})
-
-window.addEventListener('mousemove', e => {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-
-  const offsetX = 0.5 - e.pageX / width;
-  const offsetY = 0.5 - e.pageY / height;
-
-  vars.parallaxElems.forEach(el => {
-    const offset = parseInt(el.dataset.offset);
-    const translate = `translate(${Math.round(offsetX * offset)}px, ${Math.round(offsetY * offset)}px)`;
-    el.style.transform = translate;
+  vars.toggleElems.forEach(el => {
+    el.length
+      ? el.forEach(innerEl => innerEl.classList.toggle('reverse'))
+      : el.classList.toggle('reverse');
   })
 })
