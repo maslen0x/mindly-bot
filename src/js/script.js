@@ -25,9 +25,9 @@ vars.contentBtn.addEventListener('click', () => {
 })
 
 vars.mobilePhone.addEventListener('click', () => {
-  window.open('https://t.me/Jayne_n');
+  window.open('https://t.me/Mindlybot');
 })
 
 vars.centerWave.addEventListener('click', () => {
-  window.open('https://t.me/Jayne_n');
+  window.open('https://t.me/Mindlybot');
 })
