@@ -23,3 +23,13 @@ vars.contentBtn.addEventListener('click', () => {
       : el.classList.toggle('reverse');
   })
 })
+
+vars.mobilePhone.addEventListener('click', () => {
+  window.open('https://t.me/Jayne_n');
+})
+
+vars.centerWave.addEventListener('click', () => {
+  window.open('https://t.me/Jayne_n');
+})
+
+console.log(vars.phone);

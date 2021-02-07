@@ -177,29 +177,25 @@
   &--top
     bottom: 0
     z-index: 1
-    @include anim(fadeInUp, fadeOutDown, .25s, .75s)
+    @include anim(fadeInUp, fadeOutDown, .5s, .5s)
     @media screen and ( max-width: 768px )
       bottom: 150px
-      @include anim(fadeInUp, fadeOutDown, .5s, .5s)
+      @include anim(fadeInUp, fadeOutDown, .5s, .75s)
     @media screen and ( max-width: 576px )
       bottom: 25vh
-  // &--center
-  //   bottom: 0
-  //   z-index: 3
-  //   @include anim(fadeInUp, fadeOutDown, .5s, 1s)
-  //   @media screen and ( min-width: 769px )
-  //     display: none
-  //     @include anim(fadeInUp, fadeOutDown, .5s, .75s)
-  //   @media screen and ( max-width: 576px )
-  //     bottom: 10vh
   &--center
-    opacity: 0
+    bottom: 80px
+    z-index: 3
+    width: 100vw
+    cursor: pointer
+    @include anim(fadeInUp, fadeOutDown, .5s, 1s)
   &--bottom
     bottom: 0
     z-index: 4
-    @include anim(fadeInUp, fadeOutDown, .5s, 1s)
+    @include anim(fadeInUp, fadeOutDown, .25s, 1s)
     @media screen and ( max-width: 768px )
       bottom: -180px
+      @include anim(fadeInUp, fadeOutDown, .5s, 1.25s)
     @media screen and ( max-width: 576px )
       bottom: -5vh
   &--mobile
@@ -207,7 +203,7 @@
       display: none
 
 .phone
-  display: block
+  // display: block
   // position: absolute
   // right: -50px
   // bottom: -230px
@@ -220,14 +216,24 @@
   //   animation: fadeOutDown 1s ease 0s 1 forwards
   @media screen and ( max-width: 1200px )
     right: 20px
-  @media screen and ( max-width: 768px )
-    top: 250px
-    right: 50px
-  @media screen and ( max-width: 576px )
+  // @media screen and ( max-width: 768px )
+  //   top: 250px
+  //   right: 50px
+  // @media screen and ( max-width: 576px )
     position: relative
     right: 0
     max-width: 280px
     margin: 0 auto
+  &--mobile
+    display: none
+    @media screen and ( max-width: 768px )
+      position: relative
+      top: 100px
+      right: 0
+      z-index: 3
+      display: block
+      margin: 0 auto
+      cursor: pointer
   &__btn
     cursor: pointer
 
@@ -246,11 +252,3 @@
     display: none
     @media screen and ( max-width: 768px )
       display: block
-
-[data-parallax]
-  transition: transform .2s
-
-.center-wave
-  position: absolute
-  bottom: 0
-  width: 100vw
