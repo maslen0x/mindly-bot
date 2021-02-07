@@ -1,15 +1,6 @@
 import vars from './_vars';
 import toggleContentBtn from './functions/toggleContentBtn';
-import changePhonePosition from './functions/changePhonePosition';
 import parallax from './functions/parallax';
-
-document.addEventListener('DOMContentLoaded', () => {
-  // changePhonePosition();
-})
-
-window.addEventListener('resize', () => {
-  // changePhonePosition();
-})
 
 window.addEventListener('mousemove', e => {
   parallax(e);
@@ -31,5 +22,3 @@ vars.mobilePhone.addEventListener('click', () => {
 vars.centerWave.addEventListener('click', () => {
   window.open('https://t.me/Jayne_n');
 })
-
-console.log(vars.phone);

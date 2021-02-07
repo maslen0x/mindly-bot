@@ -194,7 +194,7 @@
     z-index: 4
     @include anim(fadeInUp, fadeOutDown, .25s, 1s)
     @media screen and ( max-width: 768px )
-      bottom: -180px
+      bottom: -150px
       @include anim(fadeInUp, fadeOutDown, .5s, 1.25s)
     @media screen and ( max-width: 576px )
       bottom: -5vh
@@ -203,37 +203,24 @@
       display: none
 
 .phone
-  // display: block
-  // position: absolute
-  // right: -50px
-  // bottom: -230px
   z-index: 3
   @include anim(fadeInDown, fadeOutDown, .75s, 0s)
-  // opacity: 0
-  // animation: fadeInDown 1s ease .75s 1 forwards
-  // &.reverse
-  //   opacity: 1
-  //   animation: fadeOutDown 1s ease 0s 1 forwards
   @media screen and ( max-width: 1200px )
-    right: 20px
-  // @media screen and ( max-width: 768px )
-  //   top: 250px
-  //   right: 50px
-  // @media screen and ( max-width: 576px )
     position: relative
-    right: 0
     max-width: 280px
     margin: 0 auto
   &--mobile
     display: none
     @media screen and ( max-width: 768px )
       position: relative
-      top: 100px
-      right: 0
+      top: 300px
       z-index: 3
       display: block
       margin: 0 auto
       cursor: pointer
+    @media screen and ( max-width: 576px )
+      top: 100px
+      max-width: 100%
   &__btn
     cursor: pointer
 
