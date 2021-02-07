@@ -7,6 +7,7 @@ const vars = {
     document.querySelector('.content__title'),
     document.querySelector('.content__subtitle'),
     document.querySelector('.phone'),
+    document.querySelector('.phone--mobile'),
     document.querySelector('.wave--top'),
     document.querySelector('.wave--center'),
     document.querySelectorAll('.wave--bottom')
