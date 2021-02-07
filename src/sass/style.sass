@@ -17,6 +17,7 @@
       max-width: 380px
     @media screen and ( max-width: 768px )
       margin: 0 auto
+      @include anim(fadeInDown, fadeOutUp, 0s, .5s)
     @media screen and ( max-width: 576px )
       max-width: 280px
 
@@ -44,7 +45,7 @@
     @media screen and ( max-width: 768px )
       max-width: 480px
       margin: 0 auto 60vh
-      @include anim(fadeInDown, fadeOutUp, .25s, .25s)
+      @include anim(fadeInDown, fadeOutUp, .25s, 0s)
     @media screen and ( max-width: 576px )
       max-width: 280px
       font-size: 21px
@@ -65,12 +66,9 @@
     @media screen and ( max-width: 768px )
       max-width: 330px
       margin: 0 auto 25px
-      @include anim(fadeInUp, fadeOutDown, .75s, .25s)
+      @include anim(fadeInUp, fadeOutDown, .75s, 0s)
     @media screen and ( max-width: 576px )
       font-size: 13px
-    // @media screen and ( max-height: 630px )
-    //   margin-bottom: 15px
-      
   &__btn
     position: relative
     z-index: 10
@@ -145,6 +143,7 @@
       transition: width .2s, color .2s
       @media screen and ( max-width: 768px )
         width: 100%
+        text-transform: uppercase
         padding-bottom: 0
     &.active
       @media screen and ( max-width: 768px )
@@ -184,18 +183,13 @@
     z-index: 1
     @include anim(fadeInUp, fadeOutDown, .5s, .5s)
     @media screen and ( max-width: 768px )
-      bottom: 150px
       @include anim(fadeInUp, fadeOutDown, .5s, .75s)
-    @media screen and ( max-width: 576px )
-      bottom: 25vh
   &--center
-    bottom: 80px
+    bottom: -2vh
     z-index: 3
     width: 100vw
     cursor: pointer
     @include anim(fadeInUp, fadeOutDown, .5s, 1s)
-    // @media screen and ( max-height: 630px )
-    //   bottom: 50px
   &--bottom
     bottom: 0
     z-index: 4
@@ -205,8 +199,6 @@
       @include anim(fadeInUp, fadeOutDown, .5s, 1.25s)
     @media screen and ( max-width: 576px )
       bottom: -5vh
-    // @media screen and ( max-height: 630px )
-    //   bottom: -8vh
   &--mobile
     @media screen and ( min-width: 769px )
       display: none
@@ -227,9 +219,10 @@
       display: block
       margin: 0 auto
       cursor: pointer
+      @include anim(fadeInDown, fadeOutDown, .75s, 0s, 1s, 2s)
     @media screen and ( max-width: 576px )
       top: 100px
-      max-width: 100%
+      max-width: 280px
   &__btn
     cursor: pointer
 

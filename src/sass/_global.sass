@@ -9,12 +9,12 @@ body
   color: #fff
   overflow-x: hidden
 
-@mixin anim($anim, $reverseAnim, $delay, $reverseDelay)
+@mixin anim($anim, $reverseAnim, $delay, $reverseDelay, $duration: 1s, $reverseDuration: 1s)
   opacity: 0
-  animation: $anim 1s ease $delay 1 forwards
+  animation: $anim $duration ease $delay 1 forwards
   &.reverse
     opacity: 1
-    animation: $reverseAnim 1s ease $reverseDelay 1 forwards
+    animation: $reverseAnim $reverseDuration ease $reverseDelay 1 forwards
 
 .container
   width: 100%

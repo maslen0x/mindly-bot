@@ -14,7 +14,6 @@ const vars = {
   ],
   header: document.querySelector('.header'),
   contentTitle: document.querySelector('.content__title'),
-  phone: document.querySelector('.phone'),
   mobilePhone: document.querySelector('.phone--mobile'),
   centerWave: document.querySelector('.wave--center'),
   parallaxElems: document.querySelectorAll('[data-parallax]'),
