@@ -49,8 +49,8 @@
     @media screen and ( max-width: 576px )
       max-width: 280px
       font-size: 21px
-    @media screen and ( max-height: 640px )
-      margin-bottom: 70vh
+    @media screen and ( min-height: 700px )
+      margin-bottom: 65vh
   &__subtitle
     position: relative
     z-index: 10
@@ -184,8 +184,10 @@
     @include anim(fadeInUp, fadeOutDown, .5s, .5s)
     @media screen and ( max-width: 768px )
       @include anim(fadeInUp, fadeOutDown, .5s, .75s)
+    @media screen and ( max-width: 576px )
+      bottom: -2vh
   &--center
-    bottom: -4vh
+    bottom: -6vh
     z-index: 3
     width: 100vw
     cursor: pointer
@@ -222,7 +224,6 @@
       @include anim(fadeInDown, fadeOutDown, .75s, 0s, 1s, 2s)
     @media screen and ( max-width: 576px )
       top: 100px
-      max-width: 280px
   &__btn
     cursor: pointer
     &:hover
