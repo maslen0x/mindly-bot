@@ -49,8 +49,10 @@
     @media screen and ( max-width: 576px )
       max-width: 280px
       font-size: 21px
-    @media screen and ( min-height: 700px ) and ( max-width: 768px )
+    @media screen and ( min-height: 700px ) and ( max-width: 576px )
       margin-bottom: 65vh
+    @media screen and ( min-height: 750px ) and ( max-width: 576px )
+      margin-bottom: 60vh
   &__subtitle
     position: relative
     z-index: 10
@@ -187,12 +189,16 @@
       @include anim(fadeInUp, fadeOutDown, .5s, .75s)
     @media screen and ( max-width: 576px )
       bottom: -2vh
+    @media screen and ( min-height: 750px ) and ( max-width: 576px )
+      bottom: 2vh
   &--center
     bottom: -8vh
     z-index: 3
     width: 100vw
     cursor: pointer
     @include anim(fadeInUp, fadeOutDown, .5s, 1s)
+    @media screen and ( min-height: 750px ) and ( max-width: 576px )
+      bottom: 0
   &--bottom
     bottom: 0
     z-index: 4
@@ -202,6 +208,8 @@
       @include anim(fadeInUp, fadeOutDown, .5s, 1.25s)
     @media screen and ( max-width: 576px )
       bottom: -9vh
+    @media screen and ( min-height: 750px ) and ( max-width: 576px )
+      bottom: -1vh
   &--mobile
     @media screen and ( min-width: 769px )
       display: none
