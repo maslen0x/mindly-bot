@@ -1,4 +1,5 @@
 $accent: #03eeee
+$dark: #1e1d2f
 
 html,
 body
@@ -7,6 +8,7 @@ body
   line-height: 1.1
   font-weight: 500
   color: #fff
+  background-color: $dark
   overflow-x: hidden
 
 @mixin anim($anim, $reverseAnim, $delay, $reverseDelay, $duration: 1s, $reverseDuration: 1s)
@@ -28,20 +30,23 @@ body
   position: relative
   width: 100vw
   min-height: 100vh
-  background-color: #1e1d2f
   overflow: hidden
   @media screen and ( max-width: 768px )
     padding-bottom: 40px
   @media screen and ( max-width: 576px )
     padding-bottom: 10px
-  &::before
+  &::before,
+  &::after
     content: ''
     position: absolute
     top: 0
     left: 0
     width: 100%
     height: 100%
-    background-image: linear-gradient(167.65deg, #1e1d2f 37%, #afccf4 109.02%)
+  &::after
+    background: url(../../img/mobile-lines.svg) center / cover no-repeat
+  &::before
+    background-image: linear-gradient(167.65deg, $dark 37%, #afccf4 109.02%)
     opacity: 0
     animation: fadeInBottomRight 1s ease 1s 1 forwards
   &.reverse

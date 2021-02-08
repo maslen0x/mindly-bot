@@ -187,7 +187,7 @@
     @media screen and ( max-width: 576px )
       bottom: -2vh
   &--center
-    bottom: -6vh
+    bottom: -8vh
     z-index: 3
     width: 100vw
     cursor: pointer
@@ -200,7 +200,7 @@
       bottom: -150px
       @include anim(fadeInUp, fadeOutDown, .5s, 1.25s)
     @media screen and ( max-width: 576px )
-      bottom: -7vh
+      bottom: -9vh
   &--mobile
     @media screen and ( min-width: 769px )
       display: none
@@ -228,7 +228,7 @@
     cursor: pointer
     &:hover
       rect
-        fill: #1E1D2F
+        fill: $dark
       path
         fill: #4af0f0
 
@@ -243,7 +243,3 @@
   height: 100vh
   @media screen and ( max-width: 768px )
     display: none
-  &--mobile
-    display: none
-    @media screen and ( max-width: 768px )
-      display: block
